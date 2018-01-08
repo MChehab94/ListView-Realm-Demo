@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="mchehab.com.listviewrealm.EditPersonActivity">
+
+    <data>
+        <variable name="person" type="mchehab.com.listviewrealm.Person"/>
+        <variable name="activity" type="mchehab.com.listviewrealm.EditPersonActivity"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            style="@style/editText"
+            android:text="@={person.firstName}"/>
+
+        <EditText
+            style="@style/editText"
+            android:text="@={person.lastName}"/>
+
+        <EditText
+            style="@style/editText"
+            android:inputType="number"
+            android:imeOptions="actionDone"
+            android:text="@={mchehab.com.listviewrealm.Converter.toString(person.age)}"/>
+
+        <Button
+            android:id="@+id/button"
+            style="@style/defaultStyle"
+            android:onClick="@{activity::onButtonClick}"/>
+
+    </LinearLayout>
+</layout>
